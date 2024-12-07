@@ -1,4 +1,4 @@
-const { MongoClient, ServerApiVersion } = require("mongodb");
+const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
@@ -47,6 +47,16 @@ async function run() {
         const cursor = visasCollection.find();
         const result = await cursor.toArray();
         res.send(result);
+    })
+
+    // readOne
+    app.get('/visaDetails/:id', async(req, res) => {
+      const id = req.params.id;
+      console.log(id)
+      const query = {_id: new ObjectId(id)};
+      console.log(query)
+      const result = await visasCollection.findOne(query);
+      res.send(result);
     })
     
     // create 
