@@ -40,12 +40,24 @@ async function run() {
 
 
 
+
+
+    // read
+    app.get('/visa', async(req, res) => {
+        const cursor = visasCollection.find();
+        const result = await cursor.toArray();
+        res.send(result);
+    })
+    
     // create 
-    app.post('/addVisa', async(req, res) =>{
+    app.post('/visa', async(req, res) =>{
         const data = req.body;
         const result = await visasCollection.insertOne(data);
         res.send(result);
     })
+
+    
+
 
 
 
