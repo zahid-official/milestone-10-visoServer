@@ -160,6 +160,18 @@ async function run() {
   })
 
 
+  // search applications
+  app.get('/search', async(req, res) => {
+    const {searchQuery} = req.query;
+    
+    let option = {}
+    if(searchQuery){
+      option = {countryName: {$regex: searchQuery, $options: "i"}};
+      const result = await applicationsCollection.find(option).toArray();
+      res.send(result);
+    }
+  })
+
 
 
 
