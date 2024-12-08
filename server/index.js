@@ -9,10 +9,7 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// server home page
-app.get("/", (req, res) => {
-  res.send("Server Connected Successfully!");
-});
+
 
 
 
@@ -42,6 +39,15 @@ async function run() {
 
 
 
+
+
+    
+    // read data for home page latest section
+    app.get("/", async(req, res) => {
+      const cursor = visasCollection.find().sort({_id: -1}).limit(12);
+          const result = await cursor.toArray();
+          res.send(result);
+    });
     
 
     // read
@@ -51,7 +57,7 @@ async function run() {
       res.send(result);
   })
 
-  // readOne
+  // readOne for visa details
   app.get('/visaDetails/:id', async(req, res) => {
     const id = req.params.id;
     const query = {_id: new ObjectId(id)};
@@ -59,6 +65,25 @@ async function run() {
     res.send(result);
   })
 
+  // read my visas data
+  app.get('/visa/:email', async(req, res) => {
+    const email = req.params.email;
+    const query = {userEmail: email};
+    const cursor = visasCollection.find(query);
+    const result = await cursor.toArray();
+    res.send(result);
+  })
+
+
+  // readOne for my visas
+  app.get('/visas/:id', async(req, res) => {
+    const id = req.params.id;
+    const query = {_id: new ObjectId(id)};
+    const result = await visasCollection.findOne(query);
+    res.send(result);
+  })
+
+  
   // read applicatons data
   app.get('/applications/:email', async(req, res) => {
     const email = req.params.email;
@@ -90,6 +115,36 @@ async function run() {
     const id = req.params.id;
     const query = {_id: new ObjectId(id)};
     const result = await applicationsCollection.deleteOne(query);
+    res.send(result);
+  })
+
+  // delete visa
+  app.delete('/visaDetails/:id', async(req, res) => {
+    const id = req.params.id;
+    const query = {_id: new ObjectId(id)};
+    const result = await visasCollection.deleteOne(query);
+    res.send(result);
+  })
+
+
+  // update myVisa
+  app.put('/update/:id', async(req, res) => {
+    const id = req.params.id;
+    const data = req.body;
+    const query = {_id: new ObjectId(id)};
+    const options = { upsert: true };
+    const updatedData = {
+      $set: {
+        countryName: data.country,
+        countryFlag: data.flag,
+        visaType: data.type,
+        processingTime: data.time,
+        visaFee: data.fee,
+        validatiy: data.valid,
+        applicationMethod: data.applyMethod,
+      }
+    }
+    const result = await visasCollection.updateOne(query, updatedData, options);
     res.send(result);
   })
 
