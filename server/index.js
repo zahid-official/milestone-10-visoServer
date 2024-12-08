@@ -67,6 +67,14 @@ async function run() {
     const result = await cursor.toArray();
     res.send(result);
   })
+
+  // readOne applicatons data
+  app.get('/applicationDetails/:id', async(req, res) => {
+    const id = req.params.id;
+    const query = {_id: new ObjectId(id)};
+    const result = await applicationsCollection.findOne(query);
+    res.send(result);
+  })
   
   // create 
   app.post('/visa', async(req, res) =>{
