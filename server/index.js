@@ -150,6 +150,16 @@ async function run() {
 
 
 
+  // filter visas
+  app.get('/filters/:visaType', async(req, res) => {
+    const visaType = req.params.visaType;
+    const query = {visaType};
+    const cursor = applicationsCollection.find(query);
+    const result = await cursor.toArray();
+    res.send(result);
+  })
+
+
 
 
 
