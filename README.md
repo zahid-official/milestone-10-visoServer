@@ -282,33 +282,33 @@ PORT=3000
 
 <div align="">
 <pre>
-┌──────────┐       ┌───────────────┐       ┌──────────────────┐
-│  Client  │──────►│ Express.js    │──────►│   MongoDB Atlas  │
-│  (React) │  HTTP │ Server        │ Query │   (visasDB)      │
-└──────────┘       └────────┬──────┘       └────────┬─────────┘
-                            │                       │
-                    ┌──────▼──────┐          ┌──────▼──────┐
-                    │   Router    │          │  Collections│
-                    │             │          │             │
-                    │ /visa       │          │ visas       │
-                    │ /application│          │ application │
-                    │ /filters    │          │             │
-                    │ /search     │          │             │
-                    │ /update     │          │             │
-                    └──────┬──────┘          └──────┬──────┘
-                           │                        │
-                    ┌──────▼──────┐          ┌──────▼──────┐
-                    │ Middleware  │          │   Result    │
-                    │             │          │             │
-                    │ • CORS      │          │ • Find      │
-                    │ • JSON Body │          │ • Insert    │
-                    │   Parser    │          │ • Update    │
-                    │             │          │ • Delete    │
-                    └─────────────┘          └──────┬──────┘
-                                                    │
-                    ┌───────────────────────────────┘
-                    ▼
-             JSON Response ──► Client Renders Data
+                        ┌──────────┐       ┌───────────────┐       ┌──────────────────┐
+                        │  Client  │──────►│ Express.js    │──────►│   MongoDB Atlas  │
+                        │  (React) │  HTTP │ Server        │ Query │   (visasDB)      │
+                        └──────────┘       └────────┬──────┘       └────────┬─────────┘
+                                                    │                       │
+                                            ┌──────▼──────┐          ┌──────▼──────┐
+                                            │   Router    │          │  Collections│
+                                            │             │          │             │
+                                            │ /visa       │          │ visas       │
+                                            │ /application│          │ application │
+                                            │ /filters    │          │             │
+                                            │ /search     │          │             │
+                                            │ /update     │          │             │
+                                            └──────┬──────┘          └──────┬──────┘
+                                                   │                        │
+                                            ┌──────▼──────┐          ┌──────▼──────┐
+                                            │ Middleware  │          │   Result    │
+                                            │             │          │             │
+                                            │ • CORS      │          │ • Find      │
+                                            │ • JSON Body │          │ • Insert    │
+                                            │   Parser    │          │ • Update    │
+                                            │             │          │ • Delete    │
+                                            └─────────────┘          └──────┬──────┘
+                                                                            │
+                                            ┌───────────────────────────────┘
+                                            ▼
+                                     JSON Response ──► Client Renders Data
 </pre>
 </div>
 
