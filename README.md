@@ -4,7 +4,7 @@
 
 # Viso Server - Visa Navigator Portal API
 
-A robust RESTful API powering the Viso visa management platform — handling visa data, application processing, user-specific records, filtering, and search through Express.js and MongoDB.
+A robust RESTful API powering the Viso visa management platform, handling visa data, application processing, user-specific records, filtering, and search through Express.js and MongoDB.
 
 [![Live API](https://img.shields.io/badge/▶_Live_API-server--one--ashen--40.vercel.app-00C853?style=for-the-badge&logo=vercel&logoColor=white)](https://server-one-ashen-40.vercel.app/)
 [![Client App](https://img.shields.io/badge/▶_Client_App-viso--official.netlify.app-6366F1?style=for-the-badge&logo=netlify&logoColor=white)](https://viso-official.netlify.app/)
@@ -21,7 +21,7 @@ A robust RESTful API powering the Viso visa management platform — handling vis
 
 ## 🔍 Overview
 
-**Viso Server** is the backend engine behind the [Viso](https://viso-official.netlify.app/) visa management platform. It exposes a RESTful API built with Express.js and MongoDB, enabling the client application to browse visa catalogs, submit and track applications, manage user-specific visa records, and perform filtered searches — all deployed seamlessly on Vercel as a serverless function.
+**Viso Server** is the backend engine behind the [Viso](https://viso-official.netlify.app/) visa management platform. It exposes a RESTful API built with Express.js and MongoDB, enabling the client application to browse visa catalogs, submit and track applications, manage user-specific visa records, and perform filtered searches, all deployed seamlessly on Vercel as a serverless function.
 
 > _Where every request navigates your visa journey forward._
 
@@ -193,7 +193,6 @@ A robust RESTful API powering the Viso visa management platform — handling vis
 <tr><td><code>_id</code></td><td>ObjectId</td><td>Auto-generated unique identifier</td></tr>
 <tr><td><code>countryName</code></td><td>String</td><td>Applied country name</td></tr>
 <tr><td><code>applicantEmail</code></td><td>String</td><td>Email of the applicant</td></tr>
-<tr><td><code>...</code></td><td>—</td><td>Additional application-specific fields</td></tr>
 </tbody>
 </table>
 
@@ -224,7 +223,7 @@ milestone-10-server/
 <tr><td><b>Node.js</b></td><td>v18 or higher recommended</td></tr>
 <tr><td><b>npm</b></td><td>Comes bundled with Node.js</td></tr>
 <tr><td><b>MongoDB Atlas</b></td><td>A cloud MongoDB cluster with connection credentials</td></tr>
-<tr><td><b>Vercel CLI</b></td><td>Optional — for deployment to Vercel</td></tr>
+<tr><td><b>Vercel CLI</b></td><td>Optional for deployment to Vercel</td></tr>
 </tbody>
 </table>
 
@@ -312,12 +311,12 @@ PORT=3000
 </pre>
 </div>
 
-1. **Request Arrival** — The client sends HTTP requests to the Express server hosted on Vercel.
-2. **Middleware Processing** — CORS headers are applied and the JSON request body is parsed.
-3. **Route Matching** — Express matches the request method and URL pattern to the appropriate handler.
-4. **Database Query** — The handler constructs a MongoDB query (with optional filters, sorting, or regex search).
-5. **Data Processing** — MongoDB Atlas processes the query against the `visas` or `applications` collection.
-6. **JSON Response** — The server returns structured JSON data to the client for rendering.
+1. **Request Arrival** : The client sends HTTP requests to the Express server hosted on Vercel.
+2. **Middleware Processing** : CORS headers are applied and the JSON request body is parsed.
+3. **Route Matching** : Express matches the request method and URL pattern to the appropriate handler.
+4. **Database Query** : The handler constructs a MongoDB query (with optional filters, sorting, or regex search).
+5. **Data Processing** : MongoDB Atlas processes the query against the `visas` or `applications` collection.
+6. **JSON Response** : The server returns structured JSON data to the client for rendering.
 
 <br/>
 
@@ -350,7 +349,7 @@ This server is deployed on **Vercel** as a serverless function. The `vercel.json
 <tr><th align="left">Repository</th><th align="left">Description</th><th align="left">Link</th></tr>
 </thead>
 <tbody>
-<tr><td><b>Viso Client</b></td><td>React frontend — browse visas, apply online, manage records</td><td><a href="https://github.com/zahid-official/milestone-10-visoMonorepo">GitHub</a></td></tr>
+<tr><td><b>Viso Client</b></td><td>React frontend , browse visas, apply online, manage records</td><td><a href="https://github.com/zahid-official/milestone-10-visoMonorepo">GitHub</a></td></tr>
 <tr><td><b>Live Client</b></td><td>Deployed client application on Netlify</td><td><a href="https://viso-official.netlify.app/">viso-official.netlify.app</a></td></tr>
 </tbody>
 </table>
@@ -395,4 +394,4 @@ git push origin feature/your-feature-name
 # 5. Open a Pull Request against the main branch
 ```
 
-<p align="center"><b>Viso Server</b> <i>— Powering every visa journey with reliable, scalable API infrastructure.</i></p>
+<p align="center"><b>Viso Server</b> <i> - Powering every visa journey with reliable, scalable API infrastructure.</i></p>
