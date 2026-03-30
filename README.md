@@ -83,8 +83,7 @@ A robust RESTful API powering the Viso visa management platform — handling vis
 <tr><td><b>Express</b></td><td align="center"><code>^4.21.2</code></td><td>Minimal and flexible web application framework</td></tr>
 <tr><td><b>MongoDB Driver</b></td><td align="center"><code>^6.11.0</code></td><td>Official MongoDB driver for data persistence</td></tr>
 <tr><td><b>dotenv</b></td><td align="center"><code>^16.4.7</code></td><td>Environment variable management from <code>.env</code> files</td></tr>
-<tr><td><b>CORS</b></td><td align="center"><code>^2.8.5</code></td><td>Cross-origin request handling middleware</td></tr>
-<tr><td><b>Vercel</b></td><td align="center">—</td><td>Serverless deployment and hosting platform</td></tr>
+<tr><td><b>CORS</b></td><td align="center"><code>^2.8.5</code></td><td>Cross-origin request handling middleware</td></tr>and hosting platform</td></tr>
 </tbody>
 </table>
 
@@ -165,27 +164,38 @@ A robust RESTful API powering the Viso visa management platform — handling vis
 
 ## 🗃️ Database Collections
 
-<div align="center">
-<pre>
-visasDB
-├── visas
-│   ├── _id                    ObjectId (auto-generated)
-│   ├── countryName            String — destination country
-│   ├── countryFlag            String — flag image URL
-│   ├── visaType               String — Tourist / Student / Business / ...
-│   ├── processingTime         String — estimated processing duration
-│   ├── visaFee                String — application fee amount
-│   ├── validatiy              String — visa validity period
-│   ├── applicationMethod      String — online / in-person / embassy
-│   └── userEmail              String — email of the user who added it
-│
-└── applications
-    ├── _id                    ObjectId (auto-generated)
-    ├── countryName            String — applied country
-    ├── applicantEmail         String — email of the applicant
-    └── ...                    Additional application-specific fields
-</pre>
-</div>
+### 📋 visas Collection
+
+<table align="center">
+<thead>
+<tr><th align="left">Field</th><th align="left">Type</th><th align="left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>_id</code></td><td>ObjectId</td><td>Auto-generated unique identifier</td></tr>
+<tr><td><code>countryName</code></td><td>String</td><td>Destination country name</td></tr>
+<tr><td><code>countryFlag</code></td><td>String</td><td>Flag image URL</td></tr>
+<tr><td><code>visaType</code></td><td>String</td><td>Tourist / Student / Business / ...</td></tr>
+<tr><td><code>processingTime</code></td><td>String</td><td>Estimated processing duration</td></tr>
+<tr><td><code>visaFee</code></td><td>String</td><td>Application fee amount</td></tr>
+<tr><td><code>validatiy</code></td><td>String</td><td>Visa validity period</td></tr>
+<tr><td><code>applicationMethod</code></td><td>String</td><td>Online / in-person / embassy</td></tr>
+<tr><td><code>userEmail</code></td><td>String</td><td>Email of the user who added it</td></tr>
+</tbody>
+</table>
+
+### 📋 applications Collection
+
+<table align="center">
+<thead>
+<tr><th align="left">Field</th><th align="left">Type</th><th align="left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>_id</code></td><td>ObjectId</td><td>Auto-generated unique identifier</td></tr>
+<tr><td><code>countryName</code></td><td>String</td><td>Applied country name</td></tr>
+<tr><td><code>applicantEmail</code></td><td>String</td><td>Email of the applicant</td></tr>
+<tr><td><code>...</code></td><td>—</td><td>Additional application-specific fields</td></tr>
+</tbody>
+</table>
 
 <br/>
 
@@ -193,7 +203,6 @@ visasDB
 
 ```
 milestone-10-server/
-│
 ├── index.js                       # Express server entry point with all routes
 ├── package.json                   # Dependencies and npm scripts
 ├── vercel.json                    # Vercel serverless deployment configuration
@@ -271,7 +280,7 @@ PORT=3000
 
 ## ⚙️ How It Works
 
-<div align="center">
+<div  align="center">
 <pre>
 ┌──────────┐       ┌───────────────┐       ┌──────────────────┐
 │  Client  │──────►│ Express.js    │──────►│   MongoDB Atlas  │
