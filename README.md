@@ -8,7 +8,7 @@ A robust RESTful API powering the Viso visa management platform, handling visa d
 
 [![Live API](https://img.shields.io/badge/▶_Live_API-server--one--ashen--40.vercel.app-00C853?style=for-the-badge&logo=vercel&logoColor=white)](https://server-one-ashen-40.vercel.app/)
 [![Client App](https://img.shields.io/badge/▶_Client_App-viso--official.netlify.app-6366F1?style=for-the-badge&logo=netlify&logoColor=white)](https://viso-official.netlify.app/)
-[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/zahid-official/milestone-10-server)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/zahid-official/milestone-10-visoServer)
 <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" />
 <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express" />
 <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
@@ -231,7 +231,7 @@ milestone-10-server/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/zahid-official/milestone-10-server.git
+git clone https://github.com/zahid-official/milestone-10-visoServer.git
 
 # 2. Navigate to the project directory
 cd milestone-10-server
